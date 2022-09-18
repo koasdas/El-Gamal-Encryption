@@ -16,8 +16,9 @@ def encrypt(pk,m):
         
     c1 = pow(g,r,p)
     
-    num = pow(pk,r) * m
-    c2 = pow(num, 1, p)
+    num = pow(pk, r) 
+    num1 = num * m
+    c2 = pow(num1, 1, p)
     
     return [c1,c2]
 
