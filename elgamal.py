@@ -4,7 +4,8 @@ from params import p
 from params import g
 
 def keygen():
-    sk = random.randint(1,p)
+    q = (p-1)/2
+    sk = random.randint(1,q)
     pk = pow(g, sk, p)
     return pk,sk
 
