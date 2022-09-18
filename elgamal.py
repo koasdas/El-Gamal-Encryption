@@ -17,3 +17,11 @@ def encrypt(pk,m):
     c1 = pow(g,r,p)
     c2 = pow(pow(pk,r)*m, 1, p)
     return [c1,c2]
+
+
+def decrypt(sk,c):
+    nominator = c[1]
+    denominator = (c[0])^sk
+    
+    m = pow(nominator/denominator, 1, p)
+    return m
