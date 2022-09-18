@@ -15,13 +15,20 @@ def encrypt(pk,m):
     r = random.randint(1,q)
         
     c1 = pow(g,r,p)
-    c2 = pow(pow(pk,r)*m, 1, p)
+    
+    num = pow(pk,r) * m
+    c2 = pow(num, 1, p)
+    
     return [c1,c2]
 
 
 def decrypt(sk,c):
     nominator = c[1]
-    denominator = (c[0])^sk
+    
+    denominator = pow(c[0], sk)
+    
     num = nominator/denominator
+    
     m = pow(num, 1, p)
+    
     return m
