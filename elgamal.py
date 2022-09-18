@@ -1,7 +1,7 @@
 import random
 
-
-
+from params import p
+from params import g
 
 def keygen():
     q = (p-1)/2
