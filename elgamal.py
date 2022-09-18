@@ -22,6 +22,6 @@ def encrypt(pk,m):
 def decrypt(sk,c):
     nominator = c[1]
     denominator = (c[0])^sk
-    
-    m = pow(nominator/denominator, 1, p)
+    num = nominator/denominator
+    m = pow(num, 1, p)
     return m
